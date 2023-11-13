@@ -4,15 +4,15 @@ const card = new Card;
 
 console.log(card);
 
-card.update(5)
+card.update(1)
 console.log(card);
-card.update(3)
+card.update(1)
 console.log(card);
-card.update(4)
+card.update(1)
 console.log(card);
-card.update(2)
+card.update(1)
 console.log(card);
-card.update(4)
+card.update(1)
 console.log(card);
 //     input:  user grade q
 //             repetition number n
