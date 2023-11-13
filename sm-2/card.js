@@ -1,6 +1,11 @@
 // for interval, initialize value at 0, instantiating it
 
 // not initializing with a userGrade value, since the updating functions will instead handle the 
+
+function precise(x){
+    return parseFloat(x.toFixed(5));
+}
+
 class Input {
     constructor(){
         this.repititionNumber = 0; // how many times it has been recalled since last correct
@@ -30,7 +35,7 @@ class Input {
             this.interval = 0.003; // fraction for 5min in a day
         }
 
-        this.EF = previousEF + (0.1 - (5 - userGrade) * (0.08 + (5 - userGrade) * 0.02));
+        this.EF = precise(previousEF + (0.1 - (5 - userGrade) * (0.08 + (5 - userGrade) * 0.02)));
 
         if(previousEF < 1.3){
             this.EF = 1.3;

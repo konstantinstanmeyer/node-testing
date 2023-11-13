@@ -2,18 +2,27 @@ const Card = require("./card");
 
 const card = new Card;
 
-console.log(card);
+console.log("Initial card: " + card);
 
-card.update(1)
-console.log(card);
-card.update(1)
-console.log(card);
-card.update(1)
-console.log(card);
-card.update(1)
-console.log(card);
-card.update(1)
-console.log(card);
+card.update(3)
+console.log("Update 1");
+console.table({ card })
+
+card.update(4)
+console.log("Update 2")
+console.table({ card })
+
+card.update(5)
+console.log("Update 3");
+console.table({ card })
+
+card.update(5)
+console.log("Update 4")
+console.table({ card })
+
+card.update(5)
+console.log("Update 5")
+console.table({ card })
 //     input:  user grade q
 //             repetition number n
 //             easiness factor EF
