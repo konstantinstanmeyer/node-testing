@@ -3,7 +3,8 @@
 // not initializing with a userGrade value, since the updating functions will instead handle the 
 
 function precise(x){
-    return parseFloat(x.toFixed(5));
+    console.log(x)
+    return parseFloat(x.toFixed(3));
 }
 
 class Input {
@@ -26,7 +27,7 @@ class Input {
                     this.interval = 0.1; // slightly more time between testing if already correct once before
                     break;
                 default:
-                    this.interval = Math.round(previousInterval * previousEF); // implemented for exponential growth if correct more >= 2 times in a row
+                    this.interval = precise(previousInterval * previousEF); // implemented for exponential growth if correct more >= 2 times in a row
             }
 
             this.repititionNumber++;
@@ -35,7 +36,7 @@ class Input {
             this.interval = 0.003; // fraction for 5min in a day
         }
 
-        this.EF = precise(previousEF + (0.1 - (5 - userGrade) * (0.08 + (5 - userGrade) * 0.02)));
+        this.EF = previousEF + (0.1 - (5 - userGrade) * (0.08 + (5 - userGrade) * 0.02));
 
         if(previousEF < 1.3){
             this.EF = 1.3;
